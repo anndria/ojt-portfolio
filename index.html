@@ -343,17 +343,13 @@
             observer.observe(section);
         });
 
-        // Form submission
-        // Simple form submission handler
-        function handleFormSubmit(e) {
-            e.preventDefault(); // Prevent form from submitting normally
-            alert('Form submitted! (Replace this with your own logic)'); // Placeholder for submission logic
-            e.target.reset(); // Reset the form fields
-        }
-
-        // Attach the event listener
-        const form = document.querySelector('#contact-form');
-        form.addEventListener('submit', handleFormSubmit);
+        //Form submission NO FUNCTIONALITY
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Form submitted! (Replace this with your own logic)');
+            form.reset();
+        });
     </script>
 </body>
 
