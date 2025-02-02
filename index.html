@@ -223,7 +223,7 @@
 
         <section id="contact" class="animate-fade-in-up" style="animation-delay: 0.4s;">
             <h2 class="text-3xl font-bold mb-8 text-black dark:text-red-300 text-center">GET IN TOUCH</h2>
-            <form id="contactForm" method="POST" action="" class="max-w-lg mx-auto">
+            <form class="max-w-lg mx-auto">
                 <div class="mb-4">
                     <label for="name" class="block mb-2">Name</label>
                     <input type="text" id="name" name="name"
@@ -343,13 +343,17 @@
             observer.observe(section);
         });
 
-        // Form submission using EmailJS NOT SURE IF MUGANA
-        const form = document.querySelector('form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Form submitted! (Replace this with your own logic)');
-            form.reset();
-        });
+        // Form submission
+        // Simple form submission handler
+        function handleFormSubmit(e) {
+            e.preventDefault(); // Prevent form from submitting normally
+            alert('Form submitted! (Replace this with your own logic)'); // Placeholder for submission logic
+            e.target.reset(); // Reset the form fields
+        }
+
+        // Attach the event listener
+        const form = document.querySelector('#contact-form');
+        form.addEventListener('submit', handleFormSubmit);
     </script>
 </body>
 
