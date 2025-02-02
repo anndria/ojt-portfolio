@@ -223,7 +223,7 @@
 
         <section id="contact" class="animate-fade-in-up" style="animation-delay: 0.4s;">
             <h2 class="text-3xl font-bold mb-8 text-black dark:text-red-300 text-center">GET IN TOUCH</h2>
-            <form class="max-w-lg mx-auto">
+            <form id="contactForm" method="POST" action="" class="max-w-lg mx-auto">
                 <div class="mb-4">
                     <label for="name" class="block mb-2">Name</label>
                     <input type="text" id="name" name="name"
@@ -343,35 +343,13 @@
             observer.observe(section);
         });
 
-        // Form submission using EmailJS
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            //Collect form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-
-            //Send email using EmailJS
-            emailjs.send('service_z0qxnn8', 'template_lh7pp18', formData)
-                .then(function (response) {
-                    console.log('Success:', response);
-                    alert('Your message has been sent!');
-                }, function (error) {
-                    console.log('Failed:', error);
-                    alert('There was an issue sending your message. Please try again.');
-                });
-
-            // Reset form after submission
-            this.reset();
+        // Form submission using EmailJS NOT SURE IF MUGANA
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Form submitted! (Replace this with your own logic)');
+            form.reset();
         });
-
-        // Initialize EmailJS with your User ID
-        (function () {
-            emailjs.init("JTqU-5qZ6ov1eEM5P"); // Your actual User ID
-        })();
     </script>
 </body>
 
